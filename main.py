@@ -65,7 +65,6 @@ class Extrator:
             end = line_index[j]
             try:
                 for policy in policy_type:
-                    print(f"{policy};{start};{end}")
                     content = lines[start:end - 1]
                     i += 2
                     j += 2
@@ -74,12 +73,10 @@ class Extrator:
                     try:
                         with open(f"{policy}.txt", "w") as file:
                             file.write(content)
-                            print(f"Writing into {policy}.txt")
                     except UnicodeEncodeError as e:
                         print(f"{e}")
                         with open(f"{policy}.txt", "w", encoding="latin-1") as file:
                             file.write(content)
-                            print(f"Writing into {policy}.txt")
                         continue
             except IndexError as e:
                 print(f"No more objects to process. Calling {e}")
@@ -87,9 +84,7 @@ class Extrator:
                     start, end = line_index[-2], line_index[-1]
                     content = lines[start:end - 1]
                     content = '\n'.join(content)
-                    print(content)
                     file.write(content)
-                    print(f"Writing into {policy}.txt")
 
 object = Extrator()
 object.py_gui()
