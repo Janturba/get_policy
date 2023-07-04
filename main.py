@@ -28,7 +28,7 @@ class Extrator:
         window.close()
 
     def parse_sysinfo(self):
-        with open(self.sysinfols, 'r', encoding="latin-1") as f:
+        with open(self.sysinfo, 'r', encoding="latin-1") as f:
             lines = f.readlines()
             for line in lines:  # Loop to get EOF marker
                 if "inline exception" in line:
