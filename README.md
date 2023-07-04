@@ -5,3 +5,5 @@ This program takes takes one input argument which is the sysinfo ProxySG file an
  *** v1.02 ***
  - Added inpout file browsing via PySimpleGUI
  - Export all policy types other than Landlord and Tenant files
+*** v1.03 ***
+ - Removed console window and logging
