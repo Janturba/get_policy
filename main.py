@@ -28,7 +28,7 @@ class Extrator:
         window.close()
 
     def parse_sysinfo(self):
-        with open('downloaded_sysinfo.txt', 'r', encoding="latin-1") as f:
+        with open(self.sysinfols, 'r', encoding="latin-1") as f:
             lines = f.readlines()
             for line in lines:  # Loop to get EOF marker
                 if "inline exception" in line:
@@ -57,7 +57,7 @@ class Extrator:
 
     def get_policy(self):
         line_index = self.index
-        with open('downloaded_sysinfo.txt', 'r', encoding="latin-1") as f:
+        with open(self.sysinfo, 'r', encoding="latin-1") as f:
             lines = [line.strip() for line in f.readlines()]  # Strip whitespace from each line
             policy_type = ["Central", "Local", "Forward", "VPM-CPL", "VPM-XML"]
             i, j = 0, 1
